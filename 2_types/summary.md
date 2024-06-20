@@ -9,3 +9,12 @@
 
 - `null` -> 0 -> typeof Object
 - `undefined` -> NaN -> typeof undefined
+
+### Equality
+
+Equality -> `==`
+Strict Equality -> `===`
+
+Strict Equality 는 타입 검사까지 이루어지기 때문에 eqeq를 최대한 줄이고, eqeqeq를 사용하는 것을 권장
+
+eqeq를 사용하는 것보다 차라리 형변환을 진행 후, eqeqeq를 사용하자
