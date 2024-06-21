@@ -9,3 +9,9 @@
 
 - 경계를 제외하는 경우 ex) 시작을 포함하지만 끝은 포함하지 않는 경우
 - 여행 일정 -> begin은 포함하지만 end는 포함하지 않는다.
+
+## FIRST VS LAST
+
+연속성없는 배열의 경우, `FIRST`와 `LAST`는 항상 존재
+
+- DOM에서도 `firstChild`, `lastChild` 존재
