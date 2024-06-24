@@ -19,3 +19,23 @@ let result = 5 + 3;
 //if문은 식이 될 수 없음
 let x = if (y > 10) { 20 } else { 30 };
 ```
+
+## 삼항연산자
+
+- 3개의 피연산자
+
+- `조건 ? 참(식) : 거짓(식)`
+
+1. 조건이 많으면 `if`, 삼항연산자보다 `switch`고려
+2. 코드는 가독성이 우선
+
+```javascript
+const example = condition ? a === 0 ? 'zero' : positive  : "negative";
+==============================================================
+const example = condition
+? (a === 0 ? 'zero' : positive)
+: "negative";
+```
+
+3. 값이 `nullable`한 상황에 대해 유연하게 대응하기 좋다.
+4. `bad case` : 삼항연산자에 값을 반환하지 않는 함수가 들어가는 것
