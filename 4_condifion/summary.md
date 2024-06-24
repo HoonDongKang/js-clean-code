@@ -39,3 +39,11 @@ const example = condition
 
 3. 값이 `nullable`한 상황에 대해 유연하게 대응하기 좋다.
 4. `bad case` : 삼항연산자에 값을 반환하지 않는 함수가 들어가는 것
+
+## Truthy Falsy
+
+- `Truthy`
+  true / {} / [] / 42 / "0" / "false" / new Date() / -42 / 12n / 3.14 / -3.14 / Infinity / -Infinity
+
+- `Falsy`
+  null / undefined / false / NaN / 0 / -0 / 0n / "" / document.all
