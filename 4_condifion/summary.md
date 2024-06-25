@@ -47,3 +47,22 @@ const example = condition
 
 - `Falsy`
   null / undefined / false / NaN / 0 / -0 / 0n / "" / document.all
+
+## short-circuit evaluation
+
+논리연산자를 활용한 단축평가 활용
+
+```javascript
+true && true && "도달O";
+ 참       참       참
+
+true && false && "도달X";
+ 참      거짓 -> 종료
+
+false || false || "도달O";
+  거짓    거짓      참
+
+true || true || "도달X";
+  참 -> 종료
+
+```
