@@ -97,3 +97,28 @@ function getHelloCustomer(user) {
 1. 함수를 미리 종료
 2. 사고하기 편함
 3. 조건에 대한 로직의 의존성이 높아진다.
+
+## 부정조건문
+
+최대한 부정조건문은 지양하자
+
+1. 해당 조건에 대해 고민을 한번 더 진행한다.
+2. 프로그래밍 언어 자체로 if문이 처음부터 진행되고, true일 경우 더 아래로 가지 않아도 된다.
+
+```javascript
+X;
+if (!Number.isNaN(3)) {
+  console.log("숫자입니다.");
+}
+
+O;
+if (isNumber(3)) {
+  console.log("숫자입니다.");
+}
+```
+
+그러면 언제 사용할까?
+
+1. Early Return
+2. Form Validation
+3. 보안 혹은 검사하는 로직
