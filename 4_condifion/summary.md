@@ -66,3 +66,28 @@ true || true || "도달X";
   참 -> 종료
 
 ```
+
+## else if / else 를 최대한 지양
+
+`else if` 중첩 -> 요구사항을 명확하게 분리 X -> 가독성이 낮아짐.
+`else` 사용 -> 로직이 여러개가 겹칠 경우 문제가 발생할 수 있다.
+
+```javascript
+// 20세 미만의 정보를 출력하고 "안녕하세요" 반환
+function getHelloCustomer(user) {
+  if (user.age < 20) {
+    console.log(user);
+  } else {
+    //if 문에 의해 return 불가
+    return "안녕하세요";
+  }
+}
+
+function getHelloCustomer(user) {
+  if (user.age < 20) {
+    console.log(user);
+  }
+
+  return "안녕하세요";
+}
+```
