@@ -91,3 +91,9 @@ function getHelloCustomer(user) {
   return "안녕하세요";
 }
 ```
+
+## Early Return
+
+1. 함수를 미리 종료
+2. 사고하기 편함
+3. 조건에 대한 로직의 의존성이 높아진다.
