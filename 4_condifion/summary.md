@@ -138,11 +138,18 @@ Ex) `parseInt()` 10진수를 기본값으로 설정되어 있어, 매개변수�
 4. 증감 연산자, 전위 후위 연산자 사용 지양
 
 ```javascript
-if (isLogin && token || user) {};
-if ((isLogin && token) || user) {};
+if ((isLogin && token) || user) {
+}
+if ((isLogin && token) || user) {
+}
 
-number ++
-number --
+number++;
+number--;
 number = number + 1;
 number = number - 1;
 ```
+
+## Nullish Coalescing Operator
+
+`null` or `undefined` => ??
+`falsy` => ||
