@@ -138,7 +138,7 @@ Ex) `parseInt()` 10진수를 기본값으로 설정되어 있어, 매개변수�
 4. 증감 연산자, 전위 후위 연산자 사용 지양
 
 ```javascript
-if ((isLogin && token) || user) {
+if (isLogin && token || user) {
 }
 if ((isLogin && token) || user) {
 }
@@ -153,3 +153,16 @@ number = number - 1;
 
 `null` or `undefined` => ??
 `falsy` => ||
+
+## 드모르간의 법칙
+
+- AND 연산과 OR 연산을 이용한 연산 간의 관계로 드 모르간의 상대성이론
+- 부정연산을 다룰 때 편하다.
+
+```javascript
+not (A or B) === (not A) and (not B)
+-> !(A || B) === !A && !B
+
+not (A and B) === (not A) or (not B)
+-> !(A && B) === !A || !B
+```
