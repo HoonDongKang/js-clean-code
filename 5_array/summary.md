@@ -16,3 +16,21 @@ console.log(arr.length); //4
 arr[9] = 10;
 console.log(arr); //[ 1, 2, 3, 4, <5 empty items>, 10 ]
 ```
+
+## 배열 요소 접근하기
+
+- 인덱스를 통한 접근 < 구조분해 할당을 통해 접근
+
+```javascript
+function clickGroupBtn2() {
+  const [confirmBtn, cancelBtn, removeBtn] = document.getElementsByTagName("button");
+}
+
+function formatDate(targetDate) {
+  const [date] = targetDate.toISOString().split("T");
+  const [year, month, day] = date.split("-");
+  return `${year}년 ${month}월 ${day}일`;
+}
+```
+
+2.
