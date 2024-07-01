@@ -88,3 +88,9 @@ function getWonPrice2(priceList) {
     .map(suffixWon);
 }
 ```
+
+## forEach VS Map
+
+`forEach` 단순히 배열 내 요소들을 callback 함수를 실행시켜준다 (반환값 undefined)
+
+`map` 배열 내 요소들을 callback 함수를 실행시켜준 후 반환된다.
