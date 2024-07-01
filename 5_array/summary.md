@@ -66,3 +66,25 @@ generatePriceList(1000, 2000, 3000);
 
 1. 배열을 복사한다. (복사 함수 생성)
 2. 새로운 배열을 반환하는 메서드들을 활용한다. (`filter`, `spread syntax` 등등..)
+
+## 고차함수
+배열 메서드들을 활용하여 for 문과 if 문을 대체하면 가독성도 높아지고 불변성으로부터 안정성을 갖는다.
+
+하지만 요구사항이 늘어날 수록, 복사되는 배열의 수가 점차 많아진다.
+
+-> 배열 메서드 체이닝 활용
+
+```javascript
+function getWonPrice(priceList) {
+  const isOverList = priceList.filter(isOverOneThousand);
+  const sortList = isOverList.sort(ascendingList); 
+  return sortList.map(suffixWon);
+}
+
+function getWonPrice2(priceList) {
+  return priceList
+    .filter(isOverOneThousand)
+    .sort(ascendingList)
+    .map(suffixWon);
+}
+```
