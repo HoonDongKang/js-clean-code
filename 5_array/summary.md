@@ -33,4 +33,30 @@ function formatDate(targetDate) {
 }
 ```
 
-2.
+## 유사 배열 객체
+
+자바스크립트에서 배열은 객체이기 때문에 객체로 선언 후, `Array.from`을 통해 배열로 생성 가능하다.
+
+```javascript
+const arrayLikeObject = {
+  0: "Hello",
+  1: "World",
+  length: 2
+}
+
+const arr = Array.from(arrayLikeObject); // [ 'Hello', 'World' ]
+console.log(Array.isArray(arr));// true
+```
+
+함수에 매개변수 없이 `arguments`를 통해 값을 가져올 수 있다.
+```javascript
+function generatePriceList() {
+  for (const item of arguments) {
+    console.log(item + "원"); // 1000원, 2000원, 3000원
+  }
+}
+
+generatePriceList(1000, 2000, 3000);
+```
+
+`arguments`는 유사 배열 객체이기 때문에, 배열처럼 동작하지만 Array의 메서드들을 사용할 수 없다.
