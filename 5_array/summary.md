@@ -94,3 +94,9 @@ function getWonPrice2(priceList) {
 `forEach` 단순히 배열 내 요소들을 callback 함수를 실행시켜준다 (반환값 undefined)
 
 `map` 배열 내 요소들을 callback 함수를 실행시켜준 후 반환된다.
+
+## break, Continue
+
+`for문` 내부에서 반복문을 조작할 때, `break`, `continue`를 통해 제어할 수 있다.
+
+배열 메스드 내부에서는 사용 불가능 -> `try catch`, `return`, 조건 만족 시 종료되는 메서드(`some`, `every`, `find`,,) 대체
