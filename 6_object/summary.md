@@ -25,3 +25,21 @@ console.log(obj2); // { model: "Camry" }
 
 - 대괄호 안에 표현식을 사용하여 동적으로 객체의 속성 이름 부여
 - 문자열, 숫자, 변수, 표현식을 통해 속성 이름 부여 가능
+
+## Lookup Table
+
+`if-else`, `switch` 문을 통해 분기처리를 해도 요구사항들이 늘어나다보면 조건문의 길이가 길어짐
+
+```javascript
+function getUserType3(type) {
+  const USER_TYPE = {
+    ADMIN: "관리자",
+    INSTRUCTOR: "강사",
+    STUDENT: "학생",
+    UNDEFINED: "해당없음"
+  };
+  return USER_TYPE[type] ?? USER_TYPE['UNDEFINED'];
+}
+```
+
+Lookup Table을 사용하면 상수로 관리하기 편하고, 가독성도 높여준다.
