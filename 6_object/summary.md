@@ -36,9 +36,9 @@ function getUserType3(type) {
     ADMIN: "관리자",
     INSTRUCTOR: "강사",
     STUDENT: "학생",
-    UNDEFINED: "해당없음"
+    UNDEFINED: "해당없음",
   };
-  return USER_TYPE[type] ?? USER_TYPE['UNDEFINED'];
+  return USER_TYPE[type] ?? USER_TYPE["UNDEFINED"];
 }
 ```
 
@@ -48,3 +48,30 @@ Lookup Table을 사용하면 상수로 관리하기 편하고, 가독성도 높�
 
 - 매개변수에 객체 형태의 Destructuring 처리 시, 순서 없이 입력 가능.
 - 객체 또는 배열로부터 명시적으로 변수를 할당받을 수 있음.
+
+## Object.freeze
+
+객체를 동결시키면 변경 불가능
+
+얕은 복사에 대해서는 변경을 방지할 수 있지만, 깊은 복사에 대해서는 변경을 막지 못한다.
+
+=> 깊은 복사 변경 불가
+
+1. 대중적인 유틸 라이브러리(lodash)
+2. 유틸 함수 작성
+
+```javascript
+function deepFreeze(obj) {
+  //객체 순회
+  Object.keys(obj).forEach((key) => {
+    //객체 확인
+    const value = obj[key];
+    //재귀를 통한 freeze
+    if (typeof value === "object" && value !== null) {
+      deepFreeze(value);
+    }
+  });
+  //그 외 freeze
+  return Object.freeze(obj);
+}
+```
