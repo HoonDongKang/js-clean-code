@@ -43,3 +43,8 @@ function getUserType3(type) {
 ```
 
 Lookup Table을 사용하면 상수로 관리하기 편하고, 가독성도 높여준다.
+
+## Destructuring
+
+- 매개변수에 객체 형태의 Destructuring 처리 시, 순서 없이 입력 가능.
+- 객체 또는 배열로부터 명시적으로 변수를 할당받을 수 있음.
