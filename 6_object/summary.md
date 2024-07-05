@@ -110,3 +110,15 @@ const foo = {
 console.log(foo.hasOwnProperty("bar")); //hasOwnProperty
 console.log(Object.prototype.hasOwnProperty.call(foo, "bar")); //true
 ```
+
+## 직접 접근 지양
+
+안정적으로 데이터를 다루기 위해서 직접 접근 < 레이어 분리
+
+예측 가능한 코드를 작성하여 흐름을 예측할 수 있게 작성해야 한다.
+```
+모델 -> 직접 접근 -> 데이터 변경
+-------------------------------------------------
+모델 -> 추사화된 함수(get, set) -> 함수를 이용한 데이터 변경
+```
+
