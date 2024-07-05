@@ -77,12 +77,13 @@ function deepFreeze(obj) {
 ```
 
 ## Prototype 조작 지양
+
 ```javascript
 String.prototype.welcome = function () {
-  return this + ' welcome!';
-}
+  return this + " welcome!";
+};
 
-console.log('hello'.welcome());  // hello welcome!
+console.log("hello".welcome()); // hello welcome!
 ```
 
 JS 에 내장된 메서드들을 prototype을 통해 조작하기 보다
@@ -90,3 +91,22 @@ JS 에 내장된 메서드들을 prototype을 통해 조작하기 보다
 해당 메서드들을 통해 새로운 메서드를 구현하는 것을 지향해야한다.
 
 - prototype 조작은 결국 사용되는 해당 prototype에 자신의 코드가 포함되는 것
+
+## hasOwnProperty
+
+자바스크립트는 `hasOwnProperty`를 보호하지 않는다.
+
+객체 내부에 `hasOwnProperty`라는 key의 메서드를 만들 경우, prototype의 `hasOwnProperty` 처럼 동작 X
+
+```javascript
+const foo = {
+  hasOwnProperty: function () {
+    return "hasOwnProperty";
+  },
+
+  bar: "string",
+};
+
+console.log(foo.hasOwnProperty("bar")); //hasOwnProperty
+console.log(Object.prototype.hasOwnProperty.call(foo, "bar")); //true
+```
