@@ -75,3 +75,18 @@ function deepFreeze(obj) {
   return Object.freeze(obj);
 }
 ```
+
+## Prototype 조작 지양
+```javascript
+String.prototype.welcome = function () {
+  return this + ' welcome!';
+}
+
+console.log('hello'.welcome());  // hello welcome!
+```
+
+JS 에 내장된 메서드들을 prototype을 통해 조작하기 보다
+
+해당 메서드들을 통해 새로운 메서드를 구현하는 것을 지향해야한다.
+
+- prototype 조작은 결국 사용되는 해당 prototype에 자신의 코드가 포함되는 것
