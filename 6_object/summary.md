@@ -126,4 +126,4 @@ console.log(Object.prototype.hasOwnProperty.call(foo, "bar")); //true
 
 객체 체인을 통한 접근 시, 런타임 환경에서 조회를 해오지 못할 수 있다.
 
-Optional Chaining을 통해 선택적으로 체이닝을 활용할 수 있다.
+Optional Chaining을 통해 선택적으로 체이닝을 활용할 수 있다
