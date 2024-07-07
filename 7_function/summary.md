@@ -22,3 +22,28 @@
 2. 구조분해할당을 통해 매개변수 받기
    - TIP. 첫 인자는 받고(필수), 두 번째 인자부터 구조분해할당(옵션)
 3. 인자로 값이 들어오지 않았을 때, `Error`던지가 (함수 내에서 안전하게 데이터 관리)
+
+## Default value
+
+1. 단락 평가를 통해 값이 존재하지 않을 때 default value 설정 가능
+2. 매개변수에서 default value 설정
+```javascript
+function createCarousel(options) {
+  options = options || {};
+  return options
+}
+
+function createCarousel2({ 
+  margin= required("margin"), 
+  center= false, 
+  navElement= 'div'
+  } = {}) {
+  return {
+    margin, center, navElement
+  }
+}
+
+const required = (arg) => {
+  throw new Error("required is " + arg);
+}
+```
