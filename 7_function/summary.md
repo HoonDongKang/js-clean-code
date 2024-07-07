@@ -64,3 +64,9 @@ introduce('Alice', 30, 'Reading', 'Traveling', 'Cooking');
 // Hobbies: Reading, Traveling, Cooking
 
 ```
+
+## void, return
+
+`void`인 함수에 대해 `return`할 필요가 없다.
+
+JS는 아무런 `return`이 없으면 기본적으로 `undefined`를 반환한다.
