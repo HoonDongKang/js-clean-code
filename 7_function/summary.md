@@ -10,3 +10,8 @@
   - 함수 : global
   - 메서드 : 호출된 객체
   - 생성자 : 생성된 인스턴스
+
+## argument VS parameter
+
+`parameter`: name listed in the function's definitions (Formal Parameter)
+`argument`: real values passed in the function (Actual Parameter)
