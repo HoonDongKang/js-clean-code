@@ -47,3 +47,20 @@ const required = (arg) => {
   throw new Error("required is " + arg);
 }
 ```
+
+## Rest Parameter
+
+불특정 다수의 인수를 배열로 처리할 수 있게 해준다
+```javascript
+function introduce(name, age, ...hobbies) {
+  console.log(`Name: ${name}`);
+  console.log(`Age: ${age}`);
+  console.log(`Hobbies: ${hobbies.join(', ')}`);
+}
+
+introduce('Alice', 30, 'Reading', 'Traveling', 'Cooking');
+// Name: Alice
+// Age: 30
+// Hobbies: Reading, Traveling, Cooking
+
+```
