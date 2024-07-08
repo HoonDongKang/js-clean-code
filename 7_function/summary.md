@@ -124,3 +124,9 @@ class Child extends Parent {
 const child = new Child();
 child.greet(); // "Hello from Parent", "Hello from Child"
 ```
+
+## Callback function
+
+기본적으로 `addEventListener` 에서 콜백 함수를 사용하여 해당 함수를 전달해주고 있다.
+
+callback 함수를 통해 제어권을 위임하여 중복된 코드를 줄일 수 있다.
