@@ -149,3 +149,31 @@ function pureSum(num1, num2){
   return num1 + num2;
 }
 ```
+
+## Closure
+
+함수와 함수가 선언된 렉시컬 환경의 조합
+-> 함수가 자신이 선언된 환경의 변수를 기억하고 접근 가능
+
+```javascript
+function fetcher(endPoint) {
+  return async function (url, options) {
+    return fetch(endPoint + url, options)
+      .then((res) => {
+        if (res.ok) {
+          return res.json()
+        } else {
+          throw new Error(res.error)
+        }
+      })
+      .catch((err) => {
+        console.error(err)
+      })
+  }
+}
+const naverApi = fetcher("https://naver.com");
+const daumApi = fetcher("https://daum.net");
+daumApi("/webtoon").then((res) => console.log(res))
+naverApi("/news").then((res) => console.log(res))
+```
+
