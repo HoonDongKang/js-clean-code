@@ -130,3 +130,22 @@ child.greet(); // "Hello from Parent", "Hello from Child"
 기본적으로 `addEventListener` 에서 콜백 함수를 사용하여 해당 함수를 전달해주고 있다.
 
 callback 함수를 통해 제어권을 위임하여 중복된 코드를 줄일 수 있다.
+
+## Pure function
+
+`side effect`가 발생하지 않는 함수.
+
+외부의 영향에 의해 값이 변경되어 예측가능한 결과를 기대하기 어려워 진다.
+
+```javascript
+let num1 = 10;
+let num2 = 20;
+
+function impureSum1() {
+  return num1 + num2;
+}
+
+function pureSum(num1, num2){
+  return num1 + num2;
+}
+```
