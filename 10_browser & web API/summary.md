@@ -16,9 +16,9 @@
 
 ## InnerHTML
 
- HTML 요소의 콘텐츠를 읽거나 수정하는 데 사용되는 속성을 갖지만 오래된 기능이고 여러 위험을 갖고 있다.
+HTML 요소의 콘텐츠를 읽거나 수정하는 데 사용되는 속성을 갖지만 오래된 기능이고 여러 위험을 갖고 있다.
 
- -  Cross-Site Scripting (XSS) 공격 : 웹 애플리케이션의 보안 취약점을 이용해 악성 스크립트를 삽입하는 공격
+- Cross-Site Scripting (XSS) 공격 : 웹 애플리케이션의 보안 취약점을 이용해 악성 스크립트를 삽입하는 공격
 
 `innerAdjacentHTML` 로 대체 가능
 선택한 요소의 특정 위치에 HTML을 삽입
@@ -34,5 +34,39 @@
 - 이 또한 XSS 공격을 받을 가능성이 있기 때문에 `textContent`로 대체 가능
 
 `textContent`
--  요소의 모든 텍스트 콘텐츠를 반환
+
+- 요소의 모든 텍스트 콘텐츠를 반환
 - CSS 스타일을 무시하고, 요소의 모든 텍스트 콘텐츠를 반환
+
+## Data Attribute
+
+HTML 태그 내 들어가는 속성 (`id`, `class` ,,)은 자유롭게 삽입 가능 -> 가독성 저해
+
+`data attribute`를 통해 사용자 정의 데이터를 안전하게 표준을 지키며 삽입할 수 있다.
+
+```html
+<div id="myElement" data-name="John Doe" data-age="30" data-role="admin">
+  Hello, World!
+</div>
+```
+```javascript
+var element = document.getElementById('myElement');
+
+// 데이터 속성 읽기
+var name = element.dataset.name; // "John Doe"
+var age = element.dataset.age;   // "30"
+var role = element.dataset.role; // "admin"
+
+// 데이터 속성 쓰기
+element.dataset.name = 'Jane Smith';
+element.dataset.age = '25';
+element.dataset.role = 'user';
+```
+
+CSS에서도 접근가능하며 접근자에서도 사용 가능하다.
+```css
+div::before {
+    content: attr(data-name);
+}
+
+```
